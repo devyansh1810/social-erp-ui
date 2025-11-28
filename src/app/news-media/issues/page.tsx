@@ -107,7 +107,7 @@ export default function IssueIdentificationPage() {
             enabling decision-makers to stay ahead of emerging issues.
           </p>
           <div className="flex gap-4 justify-center">
-            <Button className="bg-black hover:bg-gray-800">
+            <Button className="bg-black hover:bg-gray-800 text-white">
               <AlertCircle className="mr-2 h-4 w-4" />
               View Critical Issues
             </Button>

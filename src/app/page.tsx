@@ -19,7 +19,8 @@ import {
   Eye,
   Video,
   ChevronRight,
-  ArrowRight
+  ArrowRight,
+  Award
 } from "lucide-react";
 import Link from "next/link";
 
@@ -85,6 +86,27 @@ const socialMediaFeatures = [
     title: "Performance Dashboard",
     description: "Real-time metrics and comprehensive visualizations",
     link: "/social-media/dashboard"
+  }
+];
+
+const governanceFeatures = [
+  {
+    icon: <Award className="h-6 w-6" />,
+    title: "Impact Measurement",
+    description: "Comprehensive analytics for government programs and policies",
+    link: "/governance/impact-measurement"
+  },
+  {
+    icon: <Target className="h-6 w-6" />,
+    title: "Performance Tracking",
+    description: "Real-time monitoring of KPIs and beneficiary metrics",
+    link: "/governance/performance"
+  },
+  {
+    icon: <BarChart3 className="h-6 w-6" />,
+    title: "Resource Optimization",
+    description: "AI-driven insights for budget allocation and efficiency",
+    link: "/governance/optimization"
   }
 ];
 
@@ -212,6 +234,48 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {socialMediaFeatures.map((feature, index) => (
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 border-gray-200">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="p-2 bg-black text-white rounded-lg">
+                      {feature.icon}
+                    </div>
+                    <CardTitle className="text-xl">{feature.title}</CardTitle>
+                  </div>
+                  <CardDescription className="text-base">
+                    {feature.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Link href={feature.link}>
+                    <Button className="w-full bg-black hover:bg-gray-800 text-white">
+                      Learn More
+                      <ChevronRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Governance Analytics Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4" variant="secondary">
+              Governance Analytics
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Governance Impact Measurement</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              Advanced analytics platform for measuring government program effectiveness,
+              tracking KPIs, and optimizing resource allocation for maximum citizen impact.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {governanceFeatures.map((feature, index) => (
               <Card key={index} className="hover:shadow-xl transition-all duration-300 border-gray-200">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-3">
